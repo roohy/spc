@@ -26,7 +26,7 @@ or after the initiation and activation:
 
 ```
 conda activate spc_env
-pip install numpy==1.19.5 scipy=1.5.4 networkit=8.1
+pip install numpy==1.19.5 scipy==1.5.4 networkit==8.1
 ```
 
 ## Generating Global IBD network
