@@ -19,14 +19,14 @@ conda create -n spc_env python=3.9
 Packages can either be installed through environment initiation command:
 
 ```
-conda create -n spc_env python=3.9 scipy=1.5.4 numpy=1.19.5 networkit=8.1
+conda create -n spc_env python=3.9 scipy=1.8.1 numpy=1.22.3 networkit=10.0
 ```
 
 or after the initiation and activation:
 
 ```
 conda activate spc_env
-pip install numpy==1.19.5 scipy==1.5.4 networkit==8.1
+pip install numpy==1.22.3 scipy==1.8.1 networkit==10.0
 ```
 
 ## Generating Global IBD network

@@ -30,7 +30,7 @@ def main():
     reader = networkit.graphio.EdgeListReader(delimiter,0, continuous=False,directed=False)
     print('loading the graph into memory')
     G = reader.read(input_addr)
-    node_count = len(G.numberOfNodes())
+    node_count = G.numberOfNodes()
     print('graph loaded, saving the node mapping for later')
     print(f'Number of nodes {node_count}')
     nodemap = reader.getNodeMap()
@@ -63,9 +63,10 @@ def main():
     with open(output_addr,'wt') as outputfile:
         outputfile.write('id ')
         outputfile.write(' '.join([f'SPC_{i+1}' for i in range(args.count)]))
-        for key in inv_nodemap:
-            outputfile.write(f'{inv_nodemap[key]} ')
-            outputfile.write(' '.join([str(eigenvecs[key,i]) for i in range(args.count)]))
+        
+        for index in range(node_count):
+            outputfile.write(f'{inv_nodemap[index]} ')
+            outputfile.write(' '.join([str(eigenvecs[1][index,i]) for i in range(args.count)]))
     
     # pandas functionality update: 
     # sp_dict = {'cid':[]}
