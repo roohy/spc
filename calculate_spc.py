@@ -61,12 +61,17 @@ def main():
     
     # pickle.dump(eigenvecs,open(f'{output_addr}_eigens.pklnp'))
     with open(output_addr,'wt') as outputfile:
-        outputfile.write('id ')
-        outputfile.write(' '.join([f'SPC_{i+1}' for i in range(args.count)]))
+        print('id ',end='',file=outputfile)
+        print(' '.join([f'SPC_{i+1}' for i in range(args.count)]),file=outputfile)
+
+        # outputfile.write('id ')
+        # outputfile.write(' '.join([f'SPC_{i+1}' for i in range(args.count)]))
         
         for index in range(node_count):
-            outputfile.write(f'{inv_nodemap[index]} ')
-            outputfile.write(' '.join([str(eigenvecs[1][index,i]) for i in range(args.count)]))
+            print(f'{inv_nodemap[index]} ',end='',file=outputfile)
+            print(' '.join([str(eigenvecs[1][index,i]) for i in range(args.count)]),file=outputfile)
+            # outputfile.write(f'{inv_nodemap[index]} ')
+            # outputfile.write(' '.join([str(eigenvecs[1][index,i]) for i in range(args.count)]))
     
     # pandas functionality update: 
     # sp_dict = {'cid':[]}
